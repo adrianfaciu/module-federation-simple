@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { ModuleFederationPlugin } = require("webpack").container;
 const path = require("path");
 
 module.exports = {
@@ -24,6 +25,13 @@ module.exports = {
     ],
   },
   plugins: [
+    new ModuleFederationPlugin({
+      name: "appb",
+      filename: "remoteb.js",
+      exposes: {
+        "./HelloFromB": "./src/HelloFromB",
+      },
+    }),
     new HtmlWebpackPlugin({
       template: "./public/index.html",
     }),
