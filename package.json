@@ -1,0 +1,24 @@
+{
+  "name": "module-federation-simple",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "appA",
+    "appB"
+  ],
+  "scripts": {
+    "start": "run-p start:a start:b",
+    "start:a": "yarn workspace app-a start",
+    "start:b": "yarn workspace app-b start",
+    "build": "yarn workspaces run build",
+    "build:a": "yarn workspace app-a build",
+    "build:b": "yarn workspace app-b build",
+    "serve": "run-p serve:a serve:b",
+    "serve:a": "yarn workspace app-a serve",
+    "serve:b": "yarn workspace app-b serve"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}
