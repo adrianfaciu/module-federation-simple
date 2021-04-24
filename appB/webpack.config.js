@@ -31,6 +31,7 @@ module.exports = {
       exposes: {
         "./HelloFromB": "./src/HelloFromB",
       },
+      shared: ["react", "react-dom"],
     }),
     new HtmlWebpackPlugin({
       template: "./public/index.html",

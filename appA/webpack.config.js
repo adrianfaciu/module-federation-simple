@@ -30,6 +30,7 @@ module.exports = {
       remotes: {
         appb: "appb@//localhost:3002/remoteb.js",
       },
+      shared: ["react", "react-dom"],
     }),
     new HtmlWebpackPlugin({
       template: "./public/index.html",
